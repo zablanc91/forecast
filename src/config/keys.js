@@ -1,4 +1,7 @@
-module.exports = {
-    weatherStackAPI :'8bf07938140a532331d656d93ec4b1a6',
-    mapboxToken: 'pk.eyJ1IjoiemFibGFuYzkxIiwiYSI6ImNrOHhzbjZzaDExYXEzbW82Nm4wMmw2aG8ifQ.pv4FHypLcEaHLtad1NgKBw'
-};
+//keys.js -- determine if in production or development environment, use appropriate keys
+if(process.env.NODE_ENV === 'dev') {
+    module.exports = require('./dev');
+}
+else {
+    module.exports = require('./prod');
+}

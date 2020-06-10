@@ -2,7 +2,7 @@ const request = require('postman-request');
 const { weatherStackAPI } = require('../config/keys');
 
 const forecast = (lat, lon, callback) => {
-     const weatherQuery = `http://api.weatherstack.com/current?access_key=${weatherStackAPI || process.env.WEATHER_API}&query=${lat},${lon}&units=f`;
+     const weatherQuery = `http://api.weatherstack.com/current?access_key=${weatherStackAPI}&query=${lat},${lon}&units=f`;
 
      request({
          url: weatherQuery,
