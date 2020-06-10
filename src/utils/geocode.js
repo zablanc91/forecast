@@ -3,7 +3,7 @@ const { mapboxToken } = require('../config/keys');
 
 //use callback to allow for flexibility on what to do with API data, will give back coords and name of location
 const geocode = (address = '', callback) => {
-    const geoURL = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURI(address)}.json?access_token=${mapboxToken}&limit=1`;
+    const geoURL = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURI(address)}.json?access_token=${mapboxToken || process.env.MAPBOX_API}&limit=1`;
 
     request({
         url: geoURL,
