@@ -19,8 +19,9 @@ const forecast = (lat, lon, callback) => {
             }
             else {
                 let data = response.body;
+                console.log(data);
                 let {current, location} = data;
-                let logString = `It is currently ${location.localtime} at ${location.name}, ${location.region} and the weather is ${current.weather_descriptions[0].toLowerCase()}. The temperature is ${current.temperature} degrees Fahrenheit and there is a ${current.precip}% chance of rain.`;
+                let logString = `It is currently ${location.localtime} at ${location.name}, ${location.region} and the weather is ${current.weather_descriptions[0].toLowerCase()}. The temperature is ${current.temperature} degrees Fahrenheit and it feels like ${current.feelslike} degrees Fahrenheit. Humidity is at ${current.humidity}% and there is a ${current.precip}% chance of rain.`;
                 callback(undefined, logString);
             }
         }

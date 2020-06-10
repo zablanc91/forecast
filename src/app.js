@@ -41,7 +41,7 @@ app.get('/help', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About me???',
-        content: 'Created by Dr. Evil, will sell for ONE MILLION DOLLARS',
+        content: 'This site was created by Dr. Evil using Node.js and it utilizes data from Weatherstack and Mapbox.',
         name: 'Dr. Evil'
     });
 });
