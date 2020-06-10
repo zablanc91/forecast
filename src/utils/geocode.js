@@ -15,7 +15,7 @@ const geocode = (address = '', callback) => {
         }
         else {
             if(!response.body.features){
-                callback('Error - no search term provided.');
+                callback('Error - no search term provided.', undefined);
             }
             //no results in search - send back an error
             else if(response.body.features.length === 0) {
