@@ -1,9 +1,12 @@
 const path = require('path');
 const express = require('express');
-const app = express();
+
 const hbs = require('hbs');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
+
+const app = express();
+const port = process.env.PORT || 3000;
 
 //use Handlebars template engine
 app.set('view engine', 'hbs');
@@ -88,6 +91,6 @@ app.get('*', (req, res) => {
 });
 
 //start up the server
-app.listen(3000, () => {
-    console.log('Server is online.');
+app.listen(port, () => {
+    console.log('Server is online at port ', port);
 });

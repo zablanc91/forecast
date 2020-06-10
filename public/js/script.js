@@ -1,7 +1,7 @@
 console.log('Client side script has been loaded.');
 
 const fetchWeather = async (location) => {
-    let response = await fetch(`http://localhost:3000/weather?address=${location}`);
+    let response = await fetch(`/weather?address=${location}`);
     let data = await response.json();
 
     const placeParagraph = document.querySelector('#place-name');
